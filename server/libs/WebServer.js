@@ -20,24 +20,15 @@ class WebServer {
 
 	_addRoutes() {
 		this.server.route( {
-			path: "/{file}",
+			path: "/{param*}",
 			method: "GET",
-			handler: function( request, reply ) {
-				let file = request.params.file;
-				reply.file( "./../client/" + file );
-
-			}
+			handler: {
+		        directory: {
+		            path: './../client'
+		        }
+		    }
 		} );
-		this.server.route( {
-			path: "/{folder}/{file}",
-			method: "GET",
-			handler: function( request, reply ) {
-				let file = request.params.file;
-				let folder = request.params.folder;
-				reply.file( "./../client/" + folder + "/" + file );
 
-			}
-		} );
 		this.server.route( {
 			path: "/",
 			method: "GET",
