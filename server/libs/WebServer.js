@@ -28,6 +28,14 @@ class WebServer {
 
 			}
 		} );
+		this.server.route( {
+			path: "/",
+			method: "GET",
+			handler: function( request, reply ) {
+				reply.file( "./../client/index.html" );
+
+			}
+		} );
 	}
 
 
