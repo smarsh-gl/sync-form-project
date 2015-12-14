@@ -4,16 +4,23 @@ var host = location.search.match(/^\?host=(.*)/)[ 1 ] || 'localhost';
 
 var socket = io('http://' + host);
 
+var input = document.createElement('textarea')
+document.body.appendChild(input)
+
+input.addEventListener('keyup', (e) => {
+	console.log(e)
+	socket.emit('sync', { data: e.target.value})
+})
+
 socket.on('connect', function() {
 
 	// DEBUG
-	console.log("connect arguments:", arguments);
 } );
 
-socket.on('event', function(data) {
-
+socket.on('sync', function(data) {
+	input.value = data.data
 	// DEBUG
-	console.log("event arguments:", arguments);
+
 } );
 
 socket.on('disconnect', function() {
