@@ -29,6 +29,16 @@ class WebServer {
 			}
 		} );
 		this.server.route( {
+			path: "/{folder}/{file}",
+			method: "GET",
+			handler: function( request, reply ) {
+				let file = request.params.file;
+				let folder = request.params.folder;
+				reply.file( "./../client/" + folder + "/" + file );
+
+			}
+		} );
+		this.server.route( {
 			path: "/",
 			method: "GET",
 			handler: function( request, reply ) {
