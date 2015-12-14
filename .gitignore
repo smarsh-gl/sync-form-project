@@ -1,4 +1,6 @@
-node_modules
 *.log
 client/dist
 .DS_Store
+
+client/node_modules
+server/node_modules
