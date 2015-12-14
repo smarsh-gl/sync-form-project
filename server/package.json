@@ -8,7 +8,11 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "hapi": "^11.1.2",
     "socket.io": "^1.3.7"
+  },
+  "devDependencies": {
+    "inert": "^3.2.0"
   }
 }
