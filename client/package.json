@@ -36,7 +36,8 @@
     "socket.io-client": "^1.3.7",
     "stylus": "^0.53.0",
     "vdux": "^1.0.1",
-    "virtual-dom": "^2.1.1",
+    "virtex": "^0.1.17",
+    "virtex-dom": "^0.1.20",
     "watchify": "^3.6.1"
   }
 }
